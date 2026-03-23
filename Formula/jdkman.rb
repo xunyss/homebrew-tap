@@ -3,21 +3,21 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing OpenJDK distributions."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/1f/2f/0f43891db5c513fe33659b7714434a578727646e01fd84f25f58a0aff70a/jdkman-0.2.0.tar.gz"
-  sha256 "a2cca5af64105750f055ebb67481ffe20071cf0e4a5b4608889c84cdd7be42a8"
+  url "https://files.pythonhosted.org/packages/22/90/8fba99434bfa1b4c8314f6c20f3cab854274b9cb009ed789d13626f8a10e/jdkman-0.2.1.tar.gz"
+  sha256 "c62eabac10f38ac9898dc74e35e266dc611ac504feca5c3881b9ec2db3966e36"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "949f953dbd937c4b68d588b2620476cc6e695ff0fca25f771f44948ee09817bc"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79d9f7ef0cf9fe4a27d0408101db4f732dc23d5306c237d85653b7a1c3710475"
   end
 
   depends_on "python@3.14"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/03/bb/eb243bd6b1b015ff4b8deaacf31b9d62b6e915e29b7e379974d6e2095f5c/jdkman-0.2.0-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/30/46/d86db7b7371b4c64a0d85dc74aff32dda86e831592afca41723995198984/jdkman-0.2.1-py3-none-any.whl",
         using: :nounzip
-    sha256 "44a782a0fb40a6dc50eca3037b5290bdfbc53f44958b2ffec6905ffefb35f553"
+    sha256 "29fda941f428a33047e1ec35a8b17651016fab333d1cffeed40a0bc5eb20cc2f"
   end
 
   resource "annotated-doc" do
