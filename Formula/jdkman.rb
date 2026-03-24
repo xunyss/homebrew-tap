@@ -3,22 +3,22 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing OpenJDK distributions."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/fd/48/ee7c425ec361b3f35f3efb6d83d7747980c2f410a5c1a4844f2224d1cbd9/jdkman-0.2.11.tar.gz"
-  sha256 "d407e2b2839a80be194775b636eead8963dab76b9a6c35aec07809f327d28ef1"
+  url "https://files.pythonhosted.org/packages/4c/60/45b294f92f6846c4c711a1aaba0e1494c0bd1dec03b5a75c1f1fdb391908/jdkman-0.2.12.tar.gz"
+  sha256 "2d8c975c93b046f3ccdca660936a0062496e65fd2c9414a6a6c3f0728fbed165"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.11"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "303e8d75f0d54fde6bbd0c1a5bccd18c71bf56c968dc0ceb55f02b67f47c6cd9"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.12"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e9471dcaa324687710c67b1837a2774f0c363c7c22e076acf954141d32eedb1"
   end
 
   # depends_on "python@3.14"
   depends_on "python@3"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/24/6f/0a04084bd4d09e84ff43277d03547db981dbc017676a372df1aa5fd75dd6/jdkman-0.2.11-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/5d/04/09167c55e9f4020715bdb19b7e1e65dec5f1f0d1510f13f314f2372f6a5a/jdkman-0.2.12-py3-none-any.whl",
         using: :nounzip
-    sha256 "63d3e2af242ac8adaba4ea959c2c19a9a4f16cf34e648bd00a5c161ad4ab5605"
+    sha256 "085bd950d91d010e2334330d66b4663801209f49baa7e396fdbafc0573c42c86"
   end
 
   resource "annotated-doc" do
@@ -114,7 +114,7 @@ class Jdkman < Formula
       end
     end
     bin.install_symlink libexec/"bin/jdk"
-    zsh_script = Utils.safe_popen_read({"_JDK_COMPLETE" => "source_zsh"}, bin/"jdk")
+    zsh_script = Utils.safe_popen_read({"_JDK_COMPLETE" => "source_zsh"}, bin/"jdk").lstrip
     zsh_script = zsh_script.sub("compdef _jdk_completion jdk", <<~'ZSH'.chomp)
       if [ "$funcstack[1]" = "_jdk" ]; then
           _jdk_completion "$@"
