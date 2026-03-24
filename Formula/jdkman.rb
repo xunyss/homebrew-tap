@@ -3,21 +3,21 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing OpenJDK distributions."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/6f/cc/755c66b96f5cbabd10a519b0a7495532cac5511689b9df273d29526e770c/jdkman-0.2.2.tar.gz"
-  sha256 "0bc0eba4d0659329623d407fcea3c9cdef68aeebfd4215b361764caf1e02ea5d"
+  url "https://files.pythonhosted.org/packages/6f/3c/a0ea69cff9af42008986ffb6079b3b749b54d3a8b3407529997593f18c1b/jdkman-0.2.6.tar.gz"
+  sha256 "0955e000f000900cbe982a6e117fc55badd1d128db9b1682bc6482a5ac987ee5"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62f4401ecb1ece935b1d13ca9bd3351ed8bb6fa8102bd7bbcee1ce2e7f75532c"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5be427b898d08828b798bec68e32cc5da5541f51d026367e301a2ce2a47be885"
   end
 
   depends_on "python@3.14"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/29/66/dbacee5a068ae62f0645586567c740ea8a08556f067079c73ca5accf221f/jdkman-0.2.2-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/2d/c0/478b2dfe3bd74654774ad24403d6f2e0eaf6b964d7b3c690b0407874edf6/jdkman-0.2.6-py3-none-any.whl",
         using: :nounzip
-    sha256 "cb2665c57d71418d77cd57fb6d154c73b91be6abc329394eb6f3eb7bd1aea0cb"
+    sha256 "714fde2e92e755bf4e89a0ece86deef610294bb5b6b60415d3ff877819cd10cb"
   end
 
   resource "annotated-doc" do
@@ -113,6 +113,9 @@ class Jdkman < Formula
       end
     end
     bin.install_symlink libexec/"bin/jdk"
+    (zsh_completion/"_jdk").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_zsh"}, bin/"jdk")
+    (bash_completion/"jdk").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_bash"}, bin/"jdk")
+    (fish_completion/"jdk.fish").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_fish"}, bin/"jdk")
   end
 
   test do
