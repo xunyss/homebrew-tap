@@ -3,21 +3,21 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing OpenJDK distributions."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/6f/3c/a0ea69cff9af42008986ffb6079b3b749b54d3a8b3407529997593f18c1b/jdkman-0.2.6.tar.gz"
-  sha256 "0955e000f000900cbe982a6e117fc55badd1d128db9b1682bc6482a5ac987ee5"
+  url "https://files.pythonhosted.org/packages/98/8e/798a9fcf5509d0df4cab57d320b6bdb2ef3014c1ed8885fff86f224e7795/jdkman-0.2.7.tar.gz"
+  sha256 "25ab40b3ac88bab7a2a8776a9279ab556c24c181b90384f1a1343c06ad6fdeff"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5be427b898d08828b798bec68e32cc5da5541f51d026367e301a2ce2a47be885"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.2.7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c113cb60a9587baea8415d281944133b92f8fb598162814d954b20643c5a7e4d"
   end
 
   depends_on "python@3.14"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/2d/c0/478b2dfe3bd74654774ad24403d6f2e0eaf6b964d7b3c690b0407874edf6/jdkman-0.2.6-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/ff/0a/f51b8d59982716e854b2a589aa595965a0b6690f9638e82ee6613095abf0/jdkman-0.2.7-py3-none-any.whl",
         using: :nounzip
-    sha256 "714fde2e92e755bf4e89a0ece86deef610294bb5b6b60415d3ff877819cd10cb"
+    sha256 "cd6a0723e6521b66bc11822b1610ee1ab802668c24df2d23f4c34b087d09e2ee"
   end
 
   resource "annotated-doc" do
@@ -113,7 +113,19 @@ class Jdkman < Formula
       end
     end
     bin.install_symlink libexec/"bin/jdk"
-    (zsh_completion/"_jdk").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_zsh"}, bin/"jdk")
+    (zsh_completion/"_jdk").write <<~'ZSH'
+      #compdef jdk
+
+      _jdk_completion() {
+        eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _JDK_COMPLETE=complete_zsh jdk)
+      }
+
+      if [ "$funcstack[1]" = "_jdk" ]; then
+          _jdk_completion "$@"
+      else
+          compdef _jdk_completion jdk
+      fi
+    ZSH
     (bash_completion/"jdk").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_bash"}, bin/"jdk")
     (fish_completion/"jdk.fish").write Utils.safe_popen_read({"_JDK_COMPLETE" => "source_fish"}, bin/"jdk")
   end
