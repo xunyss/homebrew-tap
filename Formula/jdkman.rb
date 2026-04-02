@@ -3,22 +3,22 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing OpenJDK distributions."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/e9/19/9427a2771a3f4fb111fddd4e311b96ff7fdf1c8f2913a9e6c5c5b663244b/jdkman-0.3.0.tar.gz"
-  sha256 "500835dea0afe469847ab236e17f324dcac1be84f7de7c01307193905985529c"
+  url "https://files.pythonhosted.org/packages/25/5b/0cf95c4cad4a27739f0e64b0dfd1e4bb777f2cf23e2e06c77f80f729de33/jdkman-0.3.1.tar.gz"
+  sha256 "ef6f780fcdabc33e1bd2aef7099e71fab6cf4077e394a536edfd07f9e437585a"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.3.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96e5249e120c7a5f45b92928830795929c81af45ac1bf23e41384df84e317c3f"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.3.1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd42a1be0fa18db7faa67d42cb33b38c29b41ba832503f5fb64ab9d3e3374273"
   end
 
   # depends_on "python@3.14"
   depends_on "python@3"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/fc/f3/d25d34338c86e49dbb8a3ae0875278b48f45cc5ce425b1ce4ad98c217003/jdkman-0.3.0-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/f9/6f/71a2da85168a142f0b5303e4d6f7ea3a6babb69f6f63d004a93371d026ce/jdkman-0.3.1-py3-none-any.whl",
         using: :nounzip
-    sha256 "405aec1065630c251d25b26fd94e609c38c4ab01dde9b3ed38bc9b2b5f58d3be"
+    sha256 "bd02b7780de8b7b23e78d5438972b910d9e6cce9c3e7aa2d7c22ed1c7bc75de0"
   end
 
   resource "annotated-doc" do
@@ -91,12 +91,6 @@ class Jdkman < Formula
     url "https://files.pythonhosted.org/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl",
         using: :nounzip
     sha256 "112c1f0ce578bfb4cab9ffdabc68f031416ebcc216536611ba21f04e9aa84c9e"
-  end
-
-  resource "typer-slim" do
-    url "https://files.pythonhosted.org/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl",
-        using: :nounzip
-    sha256 "d5d7ee1ee2834d5020c7c616ed5e0d0f29b9a4b1dd283bdebae198ec09778d0e"
   end
 
   resource "urllib3" do
