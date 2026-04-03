@@ -1,24 +1,24 @@
 class Jdkman < Formula
   include Language::Python::Virtualenv
 
-  desc "A command-line tool for installing and managing OpenJDK distributions."
+  desc "A command-line tool for installing and managing JVM distributions, and switching Java environments."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://files.pythonhosted.org/packages/ca/51/8bd87c9fc608391b7d5e9129ce1f7943ba5c28abfb5d2d1cadd7c838511b/jdkman-0.3.5.tar.gz"
-  sha256 "703bcadb4c5209afc75c4b2c4195f0e6b6343a38abc530aba51aaff0acfbc195"
+  url "https://files.pythonhosted.org/packages/49/21/212cfc8d98f7dfe6feef7ebf9f7c40447a33a55c9886dc92e500416ce057/jdkman-0.3.6.tar.gz"
+  sha256 "22c2266193dd8cb7834179b7ff9f127998f9ca8b0c18f3c4a0b6086b2b427ce3"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.3.5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f185577a17c3c3b83f02085074e59a73f785c5aca0a51148c91af093c6b332e"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.3.6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94aa04566a310e36793ba15b075e07a43e720f9f0c873233553345bf27f98248"
   end
 
   # depends_on "python@3.14"
   depends_on "python@3"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/de/33/4491da3a2d4dd7967dd2caca60a71dc638e394e58146bc91f89f36aafbff/jdkman-0.3.5-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/4d/b6/f9109febd73371ec0941972ea3508f9db9565bbba39cfb225049b6da4dcb/jdkman-0.3.6-py3-none-any.whl",
         using: :nounzip
-    sha256 "b5a6a7f65a6b594d1f44ae5332a5cbc6ce1379fb487a68fede4a7843fa81b716"
+    sha256 "09f2cdf9a95da602b0a93af122f0b929b64476532d47436803b98f21187b3781"
   end
 
   resource "annotated-doc" do
