@@ -3,13 +3,13 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing JVM distributions, and switching Java environments."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "e749a08eba916d67181da0b454ecf7b8eb531bade2ec270ba0cf0ccaa5a198fc"
+  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "2d94d87a02529401013a0040b9d4cd489fcffc46be3b4b40f66227436388bfea"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.4.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc886d4d0386da85f7ab936e72a580bd1c2bb09f123cbe5e54c2585d98266017"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.4.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ceacea0971798223bd4f74c3bc078e9ada879beace4655c55d411cb11b8f6a25"
   end
 
   depends_on "rust" => :build
@@ -17,9 +17,9 @@ class Jdkman < Formula
   depends_on "python@3"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/c3/5e/1e6a74ccce64c12f89cd052fc6eb832c444cc4dd96ad8236f9470dd62053/jdkman-0.4.1-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/e2/0f/4f72c08f5adee22d279b18ae5040e11fd3de7786ddfef3c1a8b67c5d2ee8/jdkman-0.4.2-py3-none-any.whl",
         using: :nounzip
-    sha256 "7e555924f7e3fbb7abfcee51d460d915a957fbefb7800aa585f452d6c643c434"
+    sha256 "fee78a8dbfa05a14262b5606fa554d6b53dfeeabf4b5e54858b279eb89117987"
   end
 
   resource "annotated-doc" do
