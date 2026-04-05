@@ -1,2 +1,5 @@
 # homebrew-tap
-homebrew-tap
+
+```
+brew tap xunyss/tap
+```
