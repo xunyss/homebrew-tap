@@ -3,13 +3,13 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing JVM distributions, and switching Java environments."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.4.8.tar.gz"
-  sha256 "0c5a5ba477bb7ef951d5f5651ee55622951e4f195fa43d35e28e7cb2b5e1ba8f"
+  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.4.10.tar.gz"
+  sha256 "5f34dd011b441a1a82ef7a7634492b6f2ef0461d8f6ee220c703676ab5d3f1e0"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.4.8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e44d4c593a8d659c9750f748526e2881192badbe584221b18bd7f5e05be7b3b5"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.4.10"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "223e4be92baefbd89bffec62f2bdd83d032c3b770ecaf489ec7c4392c4c6db52"
   end
 
   depends_on "rust" => :build
@@ -17,9 +17,9 @@ class Jdkman < Formula
   depends_on "python@3"
 
   resource "jdkman-whl" do
-    url "https://files.pythonhosted.org/packages/aa/dc/64554db5fc8bb6caef11b777adf3662e73d58e3ef8f6f50575c63f844d9c/jdkman-0.4.8-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/25/e1/527d8501c26be9a049159756b780435bf528a23f1ad05f4ff25dedc866ff/jdkman-0.4.10-py3-none-any.whl",
         using: :nounzip
-    sha256 "a75b1717b6b2e7ec87eb3df669299c0fa48263e2804fed1c21382a608ca903cd"
+    sha256 "b6e3f357ac86ed04c38dab88c4463c80b7ed0cb346ce4eb6ca8d4b79dd0befd8"
   end
 
   resource "annotated-doc" do
@@ -89,9 +89,9 @@ class Jdkman < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl",
+    url "https://files.pythonhosted.org/packages/39/d1/9484b497e0a0410b901c12b8251c3e746e1e863f7d28419ffe06f7892fda/typer-0.24.2-py3-none-any.whl",
         using: :nounzip
-    sha256 "112c1f0ce578bfb4cab9ffdabc68f031416ebcc216536611ba21f04e9aa84c9e"
+    sha256 "b618bc3d721f9a8d30f3e05565be26416d06e9bcc29d49bc491dc26aba674fa8"
   end
 
   resource "urllib3" do
