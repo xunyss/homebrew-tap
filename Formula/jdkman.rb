@@ -3,13 +3,13 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing JVM distributions, and switching Java environments."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.6.8.tar.gz"
-  sha256 "e5f99fdfe8d900550f0cd797eea09b9989f8be40f21f20c222138f1491bf65c0"
+  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.6.9.tar.gz"
+  sha256 "7832cd79c74c854f30438b8d1979efe7fb041f2a44d0cbe6f446cc37eb59e79e"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.6.8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "b8b98630399162d44257870b627ae36c14ad5f9eccb857e206122157d429c434"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.6.9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "93780ea21657249d6dd11b0f30200f39f6eda0d12b6b52d3a2c59bf68d7a4b7a"
   end
 
   depends_on "rust" => :build
