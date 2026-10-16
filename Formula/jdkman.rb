@@ -3,18 +3,18 @@ class Jdkman < Formula
 
   desc "A command-line tool for installing and managing JVM distributions, and switching Java environments."
   homepage "https://github.com/xunyss/jdkman"
-  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.6.4.tar.gz"
-  sha256 "f03c62b2ef2f31a2fd4b9c2232452f21889a0e89e7eec5dbf7993547e782889e"
+  url "https://github.com/xunyss/jdkman/archive/refs/tags/v0.6.5.tar.gz"
+  sha256 "0ff59b5fdbf9a9875d8dfef8ff973bed103324367c562c34540df458b1cea91d"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/xunyss/jdkman/releases/download/v0.6.4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "23113ac4945dd01d276f5bb19401cd3bbe8790d082e11fb4dda7d0fbdd666fe8"
+    root_url "https://github.com/xunyss/jdkman/releases/download/v0.6.5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "03575b38d9a34c4edb8116ebe44981efb02da462d18a12eda2fa70f9c8cbdf3f"
   end
 
   depends_on "rust" => :build
   # depends_on "python@3"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
